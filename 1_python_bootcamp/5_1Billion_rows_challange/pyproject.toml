@@ -1,0 +1,10 @@
+[project]
+name = "5-1billion-rows-challange"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11.9"
+dependencies = [
+    "pandas>=2.2.3",
+    "wheel>=0.45.1",
+]
