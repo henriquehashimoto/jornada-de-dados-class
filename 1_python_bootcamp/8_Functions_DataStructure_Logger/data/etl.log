@@ -1,0 +1,77 @@
+2025-01-21T07:22:57.487377-0300 INFO Chamando função 'extract_data' com args ('data/import',) e kwargs {} log_utils.py
+2025-01-21T07:22:57.500684-0300 INFO Função 'extract_data' retornou             Produto    Categoria  Quantidade  Venda        Data
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16
+6    Notebook Gamer  Eletrônicos           2   1500  2023-01-17
+7     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17
+8  Teclado Mecânico  Eletrônicos           2    100  2023-01-17 log_utils.py
+2025-01-21T07:22:57.504683-0300 INFO Chamando função 'transform_data' com args (            Produto    Categoria  Quantidade  Venda        Data
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16
+6    Notebook Gamer  Eletrônicos           2   1500  2023-01-17
+7     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17
+8  Teclado Mecânico  Eletrônicos           2    100  2023-01-17,) e kwargs {} log_utils.py
+2025-01-21T07:22:57.510684-0300 INFO Função 'transform_data' retornou             Produto    Categoria  Quantidade  Venda        Data  total
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15   4500
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15    300
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15    500
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16  10500
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16    300
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16    300
+6    Notebook Gamer  Eletrônicos           2   1500  2023-01-17   3000
+7     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17    420
+8  Teclado Mecânico  Eletrônicos           2    100  2023-01-17    200 log_utils.py
+2025-01-21T07:22:57.515684-0300 INFO Chamando função 'load_data' com args (            Produto    Categoria  Quantidade  Venda        Data  total
+0    Notebook Gamer  Eletrônicos           3   1500  2023-01-15   4500
+1     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15    300
+2  Teclado Mecânico  Eletrônicos           5    100  2023-01-15    500
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16  10500
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16    300
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16    300
+6    Notebook Gamer  Eletrônicos           2   1500  2023-01-17   3000
+7     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17    420
+8  Teclado Mecânico  Eletrônicos           2    100  2023-01-17    200, 'parquet') e kwargs {} log_utils.py
+2025-01-21T07:22:57.531688-0300 INFO Função 'load_data' retornou None log_utils.py
+2025-01-21T07:24:30.329927-0300 INFO Chamando função 'extract_data' com args ('data/imports',) e kwargs {} log_utils.py
+2025-01-21T07:24:30.329927-0300 ERROR Exceção capturada em 'extract_data': No objects to concatenate log_utils.py
+Traceback (most recent call last):
+
+  File "C:\Users\Henrique Hashimoto\Desktop\repos\jornada-de-dados-class\1_python_bootcamp\8_Functions_DataStructure_Logger\src\etl.py", line 56, in <module>
+    df_transfomed = transform_data(extract_data("data/imports"))
+                    │              └ <function extract_data at 0x0000023A6D85EF20>
+                    └ <function transform_data at 0x0000023A6D85EFC0>
+
+> File "C:\Users\Henrique Hashimoto\Desktop\repos\jornada-de-dados-class\1_python_bootcamp\8_Functions_DataStructure_Logger\src\log_utils.py", line 29, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('data/imports',)
+             └ <function extract_data at 0x0000023A6D85C2C0>
+
+  File "C:\Users\Henrique Hashimoto\Desktop\repos\jornada-de-dados-class\1_python_bootcamp\8_Functions_DataStructure_Logger\src\etl.py", line 26, in extract_data
+    df_total = pd.concat(df_list,ignore_index=True)
+               │  │      └ []
+               │  └ <function concat at 0x0000023A6D1353A0>
+               └ <module 'pandas' from 'C:\\Users\\Henrique Hashimoto\\.pyenv\\pyenv-win\\versions\\3.12.4\\Lib\\site-packages\\pandas\\__init...
+
+  File "C:\Users\Henrique Hashimoto\.pyenv\pyenv-win\versions\3.12.4\Lib\site-packages\pandas\core\reshape\concat.py", line 382, in concat
+    op = _Concatenator(
+         └ <class 'pandas.core.reshape.concat._Concatenator'>
+  File "C:\Users\Henrique Hashimoto\.pyenv\pyenv-win\versions\3.12.4\Lib\site-packages\pandas\core\reshape\concat.py", line 445, in __init__
+    objs, keys = self._clean_keys_and_objs(objs, keys)
+    │            │    │                    │     └ None
+    │            │    │                    └ []
+    │            │    └ <function _Concatenator._clean_keys_and_objs at 0x0000023A6D135620>
+    │            └ <pandas.core.reshape.concat._Concatenator object at 0x0000023A6BC6CEF0>
+    └ []
+  File "C:\Users\Henrique Hashimoto\.pyenv\pyenv-win\versions\3.12.4\Lib\site-packages\pandas\core\reshape\concat.py", line 507, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+
+ValueError: No objects to concatenate
