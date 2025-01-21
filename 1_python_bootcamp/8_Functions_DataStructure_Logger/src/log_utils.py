@@ -15,7 +15,7 @@ logger.add(
 
 # Configuração do logger para arquivo de log
 logger.add(
-                "meu_arquivo_de_logs.log",
+                "data/etl.log",
                 format="{time} {level} {message} {file}",
                 level="INFO"
             )

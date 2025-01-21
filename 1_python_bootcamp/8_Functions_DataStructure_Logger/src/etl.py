@@ -5,8 +5,6 @@ import pyarrow
 from loguru import logger
 from log_utils import log_decorator
 
-# Logs 
-logger.add("data/etl.log",  format="{time} {level} {message} {file}", level="INFO")
 
 
 """
