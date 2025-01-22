@@ -24,8 +24,7 @@ def extract_data(path_json_files:str) -> pd.DataFrame:
     df_total = pd.concat(df_list,ignore_index=True)
 
     return df_total
-
-
+ 
 # Transforming data
 @log_decorator
 def transform_data(df: pd.DataFrame) -> pd.DataFrame:
